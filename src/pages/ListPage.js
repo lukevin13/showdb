@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HeroTitle from '../layouts/HeroTitle';
+import Results from '../components/Results';
 import TMDB from '../helpers/TMDB';
 
 class ListPage extends React.Component {
@@ -13,7 +14,21 @@ class ListPage extends React.Component {
     this.setResults = this.setResults.bind(this);
     this.getShowList = this.getShowList.bind(this);
 
-    this.getShowList();
+    const { showType, listType, page } = this.props.match.params;
+    this.getShowList(showType, listType, page);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { showType, listType, page } = this.props.match.params;
+    const {
+      showType: nextShowType,
+      listType: nextListType,
+      page: nextPage,
+    } = nextProps.match.params;
+
+    if (showType !== nextShowType || listType !== nextListType) {
+      this.getShowList(nextShowType, nextListType, nextPage);
+    }
   }
 
   setResults(jsonResponse) {
@@ -25,17 +40,15 @@ class ListPage extends React.Component {
     });
   }
 
-  getShowList() {
-    const { showType, listType, page } = this.props.match.params;
+  getShowList(showType, listType, page) {
     TMDB.getShowlist(showType, listType, this.setResults);
   }
 
   render() {
-    const { match } = this.props;
-
     return (
       <div>
-        <HeroTitle match={match} />
+        <HeroTitle match={this.props.match} />
+        <Results results={this.state.results} />
       </div>
     );
   }
