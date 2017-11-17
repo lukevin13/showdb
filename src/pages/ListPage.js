@@ -4,6 +4,15 @@ import HeroTitle from '../layouts/HeroTitle';
 import Results from '../components/Results';
 import TMDB from '../helpers/TMDB';
 
+const matchMap = {
+  movie: 'Movies',
+  tv: 'TV Shows',
+  popular: 'Popular',
+  top_rated: 'Top Rated',
+  now_playing: 'Now Playing',
+  on_the_air: 'On the Air',
+};
+
 class ListPage extends React.Component {
   constructor(props) {
     super(props);
@@ -45,9 +54,14 @@ class ListPage extends React.Component {
   }
 
   render() {
+    const { showType, listType } = this.props.match.params;
+
     return (
       <div>
-        <HeroTitle match={this.props.match} />
+        <HeroTitle
+          title={matchMap[showType]}
+          subtitle={matchMap[listType]}
+        />
         <Results results={this.state.results} />
       </div>
     );

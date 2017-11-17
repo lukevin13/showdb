@@ -1,22 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const matchMap = {
-  movie: 'Movies',
-  tv: 'TV Shows',
-  popular: 'Popular',
-  top_rated: 'Top Rated',
-  now_playing: 'Now Playing',
-  on_the_air: 'On the Air',
-};
-
-const HeroTitle = ({ match }) => (
+const HeroTitle = ({ title, subtitle }) => (
   <div className="hero is-dark">
     <div className="hero-body">
       <div className="container">
         <div>
-          <p className="title is-size-2">{matchMap[match.params.showType]}</p>
-          <p className="subtitle">{matchMap[match.params.listType]}</p>
+          <p className="title is-size-2">{title}</p>
+          <p className="subtitle">{subtitle}</p>
         </div>
       </div>
     </div>
@@ -24,11 +15,12 @@ const HeroTitle = ({ match }) => (
 );
 
 HeroTitle.propTypes = {
-  match: PropTypes.shape({}),
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
 };
 
 HeroTitle.defaultProps = {
-  match: {},
+  subtitle: '',
 };
 
 export default HeroTitle;
