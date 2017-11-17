@@ -1,8 +1,9 @@
 import React from 'react';
+import HeroTitle from '../layouts/HeroTitle';
 
 const HomePage = () => (
   <div>
-    <h1>HomePage</h1>
+    <HeroTitle title="ShowDb" subtitle="Movie and TV-Show Information" />
   </div>
 );
 
