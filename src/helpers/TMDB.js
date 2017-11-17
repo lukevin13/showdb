@@ -23,6 +23,12 @@ const getShowlist = (showType, listType, callback) => {
   sendTmdbRequest(url, callback);
 };
 
+// Search for a show
+const getSearchResults = (showType, query, callback) => {
+  const url = `${tmdbHost}/search/${showType}?${apiKey}&query=${query}`;
+  sendTmdbRequest(url, callback);
+};
+
 // Gets details about a show
 const getDetails = (showType, showID, callback) => {
   const url = `${tmdbHost}/${showType}/${showID}?${apiKey}`;
@@ -48,6 +54,7 @@ const TMDB = {
   tmdbImgHost,
   sendTmdbRequest,
   getShowlist,
+  getSearchResults,
   getDetails,
   getRecommendations,
   getCredits,

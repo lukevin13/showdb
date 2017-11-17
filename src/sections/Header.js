@@ -34,8 +34,9 @@ class Header extends React.Component {
             </div>
             <div className={`navbar-menu ${navMenuActive && 'is-active'}`}>
               <div className="navbar-end">
+                <Link className="navbar-item" to="/search">Search</Link>
                 <div className="navbar-item has-dropdown is-hoverable">
-                  <p className="navbar-link">Movies</p>
+                  <a className="navbar-link">Movies</a>
                   <div className="navbar-dropdown">
                     <Link className="navbar-item" to="/list/movie/popular/1">Popular</Link>
                     <Link className="navbar-item" to="/list/movie/top_rated/1">Top Rated</Link>
@@ -43,7 +44,7 @@ class Header extends React.Component {
                   </div>
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
-                  <p className="navbar-link">TV Shows</p>
+                  <a className="navbar-link">TV Shows</a>
                   <div className="navbar-dropdown">
                     <Link className="navbar-item" to="/list/tv/popular/1">Popular</Link>
                     <Link className="navbar-item" to="/list/tv/top_rated/1">Top Rated</Link>
