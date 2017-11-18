@@ -10,16 +10,27 @@ class Results extends React.Component {
     this.state = {
       modalActive: false,
       modalShow: {},
+      modalCredits: {},
     };
 
     this.setModalShow = this.setModalShow.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.clearModal = this.clearModal.bind(this);
+    this.setModalCredits = this.setModalCredits.bind(this);
   }
 
   setModalShow(show) {
+    console.log(show);
     this.setState({
       modalShow: show,
+    });
+    TMDB.getCredits(this.props.showType, show.id, this.setModalCredits);
+  }
+
+  setModalCredits(credits) {
+    console.log(credits);
+    this.setState({
+      modalCredits: credits,
       modalActive: true,
     });
   }
@@ -54,7 +65,11 @@ class Results extends React.Component {
         </section>
         {
           (this.state.modalActive)
-          ? <ShowDetails show={this.state.modalShow} clearModal={this.clearModal} />
+          ? <ShowDetails
+            show={this.state.modalShow}
+            credits={this.state.modalCredits}
+            clearModal={this.clearModal}
+          />
           : null
         }
       </div>
