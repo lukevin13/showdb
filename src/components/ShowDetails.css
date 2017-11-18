@@ -1,3 +1,7 @@
+.custom-modal {
+  z-index: 100;
+}
+
 .custom-content {
   width: inherit;
   overflow-x: hidden;

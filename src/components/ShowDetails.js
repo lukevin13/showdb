@@ -4,7 +4,7 @@ import TMDB from '../helpers/TMDB';
 import './ShowDetails.css';
 
 const ShowDetails = ({ show, credits, clearModal }) => (
-  <div className="modal is-active">
+  <div className="modal is-active custom-modal">
     <div className="modal-background" onClick={clearModal}/>
     <div className="container">
       <div className="modal-content custom-content">
