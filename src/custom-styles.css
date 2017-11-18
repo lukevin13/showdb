@@ -1,3 +1,7 @@
 .section {
   background-color: hsl(0, 0%, 96%);
 }
+
+.navbar {
+  width: 100vw;
+}

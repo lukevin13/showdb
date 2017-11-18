@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ShowBlock from '../components/ShowBlock';
 import ShowDetails from '../components/ShowDetails';
 import TMDB from '../helpers/TMDB';
+import './Results.css';
 
 class Results extends React.Component {
   constructor(props) {
@@ -50,11 +51,11 @@ class Results extends React.Component {
 
     return (
       <div>
-        <section className="section">
+        <section className="section custom-section-mobile">
           <div className="container">
             <ul className="columns is-multiline">
               {results.map(result => (
-                <li className="column is-4" key={result.id}>
+                <li className="column is-4 custom-column-mobile" key={result.id}>
                   <a onClick={() => {this.handleClick(result.id)}}>
                     <ShowBlock show={result} />
                   </a>

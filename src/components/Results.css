@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+  .custom-section-mobile {
+    padding: 0;
+  }
+
+  .custom-column-mobile {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
