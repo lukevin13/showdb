@@ -41,6 +41,7 @@ class Header extends React.Component {
                     <Link className="navbar-item" to="/list/movie/popular/1">Popular</Link>
                     <Link className="navbar-item" to="/list/movie/top_rated/1">Top Rated</Link>
                     <Link className="navbar-item" to="/list/movie/now_playing/1">Now Playing</Link>
+                    <Link className="navbar-item" to="/list/movie/upcoming/1">Upcoming</Link>
                   </div>
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">

@@ -11,6 +11,7 @@ const matchMap = {
   top_rated: 'Top Rated',
   now_playing: 'Now Playing',
   on_the_air: 'On the Air',
+  upcoming: 'Upcoming',
 };
 
 class ListPage extends React.Component {
