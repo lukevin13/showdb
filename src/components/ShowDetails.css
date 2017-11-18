@@ -2,3 +2,23 @@
   width: inherit;
   overflow-x: hidden;
 }
+
+.custom-box {
+  height: 100%;
+  background-color: hsl(0, 0%, 96%);
+}
+
+.custom-content::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.custom-content::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: hsl(348, 100%, 61%);
+}
+
+.custom-content::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background-color: hsl(0, 0%, 96%);
+}
