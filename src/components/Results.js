@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ShowBlock from '../components/ShowBlock';
+import ShowDetails from '../components/ShowDetails';
 import TMDB from '../helpers/TMDB';
 
 class Results extends React.Component {
@@ -51,7 +52,11 @@ class Results extends React.Component {
             </ul>
           </div>
         </section>
-
+        {
+          (this.state.modalActive)
+          ? <ShowDetails show={this.state.modalShow} clearModal={this.clearModal} />
+          : null
+        }
       </div>
     );
   }
