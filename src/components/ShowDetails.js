@@ -24,7 +24,7 @@ const ShowDetails = ({ show, credits, clearModal }) => (
                   <p className="subtitle">{TMDB.getReleaseYear(show)}</p>
                 </div>
                 <div className="column is-one-third-desktop is-one-third-tablet is-half-mobile">
-                  <p className="heading">{(show.runtime) ? 'Movie Runtime' : 'Episode Runtime'}</p>
+                  <p className="heading">Runtime</p>
                   <p className="subtitle">
                     {(show.runtime || show.episode_run_time)
                       ? `${show.runtime || show.episode_run_time} min`
