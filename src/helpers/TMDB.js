@@ -47,6 +47,13 @@ const getCredits = (showType, showID, callback) => {
   sendTmdbRequest(url, callback);
 };
 
+// Parse the year out of the release date
+const getReleaseYear = (show) => {
+  const date = show.release_date || show.first_air_date;
+  if (date) return date.split('-')[0];
+  return 'N/A';
+};
+
 // Object to be exported
 const TMDB = {
   tmdbHost,
@@ -58,6 +65,7 @@ const TMDB = {
   getDetails,
   getRecommendations,
   getCredits,
+  getReleaseYear,
 };
 
 export default TMDB;

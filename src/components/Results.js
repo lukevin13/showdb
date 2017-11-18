@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ShowBlock from '../components/ShowBlock';
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      modalActive: false,
+      modalShow: {},
     };
+  }
+
+  clearModal() {
+    this.setState({
+      modalActive: false,
+    });
   }
 
   render() {
@@ -15,9 +23,11 @@ class Results extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <ul>
+          <ul className="columns is-multiline">
             {results.map(result => (
-              <li key={result.id}>{result.title || result.name} - {result.vote_average || 'N/A'}</li>
+              <li className="column is-4" key={result.id}>
+                <ShowBlock show={result} />
+              </li>
             ))}
           </ul>
         </div>
