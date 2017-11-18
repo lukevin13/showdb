@@ -62,7 +62,7 @@ class ListPage extends React.Component {
           title={matchMap[showType]}
           subtitle={matchMap[listType]}
         />
-        <Results results={this.state.results} />
+        <Results results={this.state.results} showType={showType} />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ShowBlock from '../components/ShowBlock';
+import TMDB from '../helpers/TMDB';
 
 class Results extends React.Component {
   constructor(props) {
@@ -9,6 +10,21 @@ class Results extends React.Component {
       modalActive: false,
       modalShow: {},
     };
+
+    this.setModalShow = this.setModalShow.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.clearModal = this.clearModal.bind(this);
+  }
+
+  setModalShow(show) {
+    this.setState({
+      modalShow: show,
+      modalActive: true,
+    });
+  }
+
+  handleClick(showID) {
+    TMDB.getDetails(this.props.showType, showID, this.setModalShow);
   }
 
   clearModal() {
@@ -21,23 +37,29 @@ class Results extends React.Component {
     const { results } = this.props;
 
     return (
-      <section className="section">
-        <div className="container">
-          <ul className="columns is-multiline">
-            {results.map(result => (
-              <li className="column is-4" key={result.id}>
-                <ShowBlock show={result} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <div>
+        <section className="section">
+          <div className="container">
+            <ul className="columns is-multiline">
+              {results.map(result => (
+                <li className="column is-4" key={result.id}>
+                  <a onClick={() => {this.handleClick(result.id)}}>
+                    <ShowBlock show={result} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+      </div>
     );
   }
 }
 
 Results.propTypes = {
   results: PropTypes.arrayOf(PropTypes.object),
+  showType: PropTypes.string.isRequired,
 };
 
 Results.defaultProps = {

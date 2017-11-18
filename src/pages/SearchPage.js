@@ -74,7 +74,7 @@ class SearchPage extends React.Component {
             </form>
           </div>
         </section>
-        <Results results={results} />
+        <Results results={results} showType={showType} />
       </div>
     );
   }
