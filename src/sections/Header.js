@@ -8,11 +8,18 @@ class Header extends React.Component {
       navMenuActive: false,
     };
     this.toggleNavMenu = this.toggleNavMenu.bind(this);
+    this.clearNavMenu = this.clearNavMenu.bind(this);
   }
 
   toggleNavMenu() {
     this.setState({
       navMenuActive: !this.state.navMenuActive,
+    });
+  }
+
+  clearNavMenu() {
+    this.setState({
+      navMenuActive: false,
     });
   }
 
@@ -22,7 +29,7 @@ class Header extends React.Component {
     return (
       <header>
 
-        <nav className="navbar is-danger">
+        <nav className="navbar is-danger is-fixed-top">
           <div className="container">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">ShowDb</Link>
@@ -32,7 +39,10 @@ class Header extends React.Component {
                 <span></span>
               </div>
             </div>
-            <div className={`navbar-menu ${navMenuActive && 'is-active'}`}>
+            <div
+              className={`navbar-menu ${navMenuActive && 'is-active'}`}
+              onClick={this.clearNavMenu}
+            >
               <div className="navbar-end">
                 <Link className="navbar-item" to="/search">Search</Link>
                 <div className="navbar-item has-dropdown is-hoverable">
