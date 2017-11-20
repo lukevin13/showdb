@@ -2,8 +2,10 @@
   "name": "showdb",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lukevin13.github.io/showdb",
   "dependencies": {
     "bulma": "^0.6.1",
+    "gh-pages": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -11,6 +13,8 @@
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
