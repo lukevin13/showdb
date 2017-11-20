@@ -7,4 +7,4 @@ Provides information on movie and tv-shows.
 - TMDB API (The Movie Database)
 
 ## Site
-[https://lukevin13.github.io/showdb/]
+https://lukevin13.github.io/showdb/
