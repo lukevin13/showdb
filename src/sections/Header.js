@@ -44,22 +44,22 @@ class Header extends React.Component {
               onClick={this.clearNavMenu}
             >
               <div className="navbar-end">
-                <Link className="navbar-item" to="/search">Search</Link>
+                <Link className="navbar-item" to="/showdb/search">Search</Link>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <a className="navbar-link">Movies</a>
                   <div className="navbar-dropdown">
-                    <Link className="navbar-item" to="/list/movie/popular/1">Popular</Link>
-                    <Link className="navbar-item" to="/list/movie/top_rated/1">Top Rated</Link>
-                    <Link className="navbar-item" to="/list/movie/now_playing/1">Now Playing</Link>
-                    <Link className="navbar-item" to="/list/movie/upcoming/1">Upcoming</Link>
+                    <Link className="navbar-item" to="/showdb/list/movie/popular/1">Popular</Link>
+                    <Link className="navbar-item" to="/showdb/list/movie/top_rated/1">Top Rated</Link>
+                    <Link className="navbar-item" to="/showdb/list/movie/now_playing/1">Now Playing</Link>
+                    <Link className="navbar-item" to="/showdb/list/movie/upcoming/1">Upcoming</Link>
                   </div>
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <a className="navbar-link">TV Shows</a>
                   <div className="navbar-dropdown">
-                    <Link className="navbar-item" to="/list/tv/popular/1">Popular</Link>
-                    <Link className="navbar-item" to="/list/tv/top_rated/1">Top Rated</Link>
-                    <Link className="navbar-item" to="/list/tv/on_the_air/1">On the Air</Link>
+                    <Link className="navbar-item" to="/showdb/list/tv/popular/1">Popular</Link>
+                    <Link className="navbar-item" to="/showdb/list/tv/top_rated/1">Top Rated</Link>
+                    <Link className="navbar-item" to="/showdb/list/tv/on_the_air/1">On the Air</Link>
                   </div>
                 </div>
               </div>
