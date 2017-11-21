@@ -32,7 +32,7 @@ class Header extends React.Component {
         <nav className="navbar is-danger is-fixed-top">
           <div className="container">
             <div className="navbar-brand">
-              <Link className="navbar-item" to="/">ShowDb</Link>
+              <Link className="navbar-item" to="/showdb">ShowDb</Link>
               <div className="navbar-burger" onClick={this.toggleNavMenu}>
                 <span></span>
                 <span></span>
